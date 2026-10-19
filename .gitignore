@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# Data, checkpoints, outputs (large / regenerable)
+data/
+checkpoints/
+*.pt
+*.bin
+*.safetensors
+outputs/
+wandb/
+
+# Bug-mode answer keys
+.bugs/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
