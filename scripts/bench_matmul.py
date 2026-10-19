@@ -11,6 +11,11 @@ from mini_llm.utils import get_device, sync
 SIZES = [32, 128, 512, 1024, 2048, 4096]
 WARMUP, ITERS = 3, 10
 
+# The Warmup Loop (WARMUP = 3):
+# When you run PyTorch operations for the very first time, the system has to do a lot of "behind-the-scenes" setup: allocating memory on the GPU, compiling kernels, and initializing drivers. This one-off setup is slow. If you timed the very first execution, your results would be artificially bloated. The warmup loop makes sure all initial overhead is paid before the stopwatch starts.
+
+# The Iteration Loop (ITERS = 10):
+# Computers run background tasks (OS processes, CPU clock speed fluctuations) that can cause tiny timing hiccups. By running the multiplication 10 times and averaging the result, you get a stable, reliable benchmark measurement.
 
 def bench(device: str, n: int) -> float:
     """Average milliseconds for one (n, n) @ (n, n) matmul on `device`."""
