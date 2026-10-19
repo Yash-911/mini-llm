@@ -51,7 +51,7 @@
 - Before any local run > 10 minutes, estimate time/memory and suggest `caffeinate -i`.
 - Checkpoints in `checkpoints/` (keep only `last.pt` and `best.pt` per run), datasets in
   `data/` — both gitignored.
-- Python env: `uv`, Python 3.11 or 3.12.
+- Python env: `uv`, Python 3.11–3.13.
 
 ## Model size targets
 - From scratch: ~10M params char-level on TinyShakespeare.
